@@ -1,0 +1,15 @@
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        if(s.length() == 0) return true; // Edge case
+        int sPointer =0;
+        int tPointer =0;
+        while(tPointer < t.length()){  // until the t reaches the end 
+            if(s.charAt(sPointer) == t.charAt(tPointer)){   // Contains means increase the sPointer
+                sPointer++;
+            }
+            if(sPointer == s.length()) return true;   // This means the string checks all the character
+            tPointer++;  // S is constant and P is moves
+        }
+        return false;
+    }
+}
